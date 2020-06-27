@@ -13,7 +13,9 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 // TODO: CRIO_TASK_MODULE_SERIALIZATION
 //  Implement Restaurant class.
@@ -33,7 +35,16 @@ import lombok.NoArgsConstructor;
 //  ]
 // }
 
+@Data
 public class Restaurant {
-
+  @Getter @Setter private String restaurantId;
+  @Getter @Setter private String name;
+  @Getter @Setter private String city;
+  @Getter @Setter private String imageUrl;
+  @Getter @Setter private float latitude;
+  @Getter @Setter private float longitude;
+  @Getter @Setter private String opensAt;
+  @Getter @Setter private String closesAt;
+  @Getter @Setter private List<String> attributes;
 }
 
