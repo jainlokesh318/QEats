@@ -38,11 +38,13 @@ import lombok.Setter;
 @Data
 public class Restaurant {
   @Getter @Setter private String restaurantId;
+ 
+  @JsonIgnore @Getter @Setter private String id;
   @Getter @Setter private String name;
   @Getter @Setter private String city;
   @Getter @Setter private String imageUrl;
-  @Getter @Setter private float latitude;
-  @Getter @Setter private float longitude;
+  @Getter @Setter private Double latitude;
+  @Getter @Setter private Double longitude;
   @Getter @Setter private String opensAt;
   @Getter @Setter private String closesAt;
   @Getter @Setter private List<String> attributes;
