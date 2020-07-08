@@ -10,7 +10,6 @@ import com.crio.qeats.exchanges.GetRestaurantsRequest;
 import com.crio.qeats.exchanges.GetRestaurantsResponse;
 import com.crio.qeats.services.RestaurantService;
 import java.time.LocalTime;
-
 import javax.validation.Valid;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,40 +64,17 @@ public class RestaurantController {
     return ResponseEntity.ok().body(getRestaurantsResponse);
   }
 
-  // TIP(MODULE_MENUAPI): Model Implementation for getting menu given a restaurantId.
-  // Get the Menu for the given restaurantId
-  // API URI: /qeats/v1/menu?restaurantId=11
-  // Method: GET
-  // Query Params: restaurantId
 
 
-  // Success Output:
-  // 1). If restaurantId is present return Menu
-  // 2). Otherwise respond with BadHttpRequest.
-  //
-  // HTTP Code: 200
-  // {
-  //  "menu": {
-  //    "items": [
-  //      {
-  //        "attributes": [
-  //          "South Indian"
-  //        ],
-  //        "id": "1",
-  //        "imageUrl": "www.google.com",
-  //        "itemId": "10",
-  //        "name": "Idly",
-  //        "price": 45
-  //      }
-  //    ],
-  //    "restaurantId": "11"
-  //  }
-  // }
-  // Error Response:
-  // HTTP Code: 4xx, if client side error.
-  //          : 5xx, if server side error.
-  // Eg:
-  // curl -X GET "http://localhost:8081/qeats/v1/menu?restaurantId=11"
+
+
+
+
+
+
+
+
+
 
 }
 

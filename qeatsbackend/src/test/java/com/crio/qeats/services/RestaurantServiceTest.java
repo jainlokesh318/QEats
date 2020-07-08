@@ -36,12 +36,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 
-// TODO: CRIO_TASK_MODULE_RESTAURANTSAPI
-//  Pass all the RestaurantService test cases.
-// Contains necessary test cases that check for implementation correctness.
-// Objectives:
-// 1. Make modifications to the tests if necessary so that all test cases pass
-// 2. Test RestaurantService Api by mocking RestaurantRepositoryService.
 
 @SpringBootTest(classes = {QEatsApplication.class})
 @MockitoSettings(strictness = Strictness.STRICT_STUBS)
@@ -93,15 +87,8 @@ class RestaurantServiceTest {
   @Test
   void normalHourServingRadiusIs5Kms() throws IOException {
 
-    // TODO: CRIO_TASK_MODULE_RESTAURANTSAPI
-    // We must ensure the API retrieves only restaurants that are closeby and are open
-    // In short, we need to test:
-    // 1. If the mocked service methods are being called
-    // 2. If the expected restaurants are being returned
-    // HINT: Use the `loadRestaurantsDuringNormalHours` utility method to speed things up
 
 
-    assertFalse(false);
   }
 
 

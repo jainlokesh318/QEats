@@ -36,10 +36,11 @@ import lombok.Setter;
 // }
 
 @Data
+@NoArgsConstructor
 public class Restaurant {
-  @Getter @Setter private String restaurantId;
- 
+
   @JsonIgnore @Getter @Setter private String id;
+  @Getter @Setter private String restaurantId;
   @Getter @Setter private String name;
   @Getter @Setter private String city;
   @Getter @Setter private String imageUrl;
@@ -48,5 +49,8 @@ public class Restaurant {
   @Getter @Setter private String opensAt;
   @Getter @Setter private String closesAt;
   @Getter @Setter private List<String> attributes;
-}
 
+  public Object getRestaurantId() {
+    return restaurantId;
+  }
+}
