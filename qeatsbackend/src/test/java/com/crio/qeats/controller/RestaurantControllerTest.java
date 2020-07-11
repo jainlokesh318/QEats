@@ -59,17 +59,12 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.util.UriComponentsBuilder;
 
-// TODO: CRIO_TASK_MODULE_RESTAURANTSAPI
-//  Pass all the RestaurantController test cases.
-//  Make modifications to the tests if necessary.
-//  Test RestaurantController by mocking RestaurantService.
 @SpringBootTest(classes = {QEatsApplication.class})
 @MockitoSettings(strictness = Strictness.STRICT_STUBS)
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
 public class RestaurantControllerTest {
 
-  //FIXME: REVIEW the api names
   private static final String RESTAURANT_API_URI = RESTAURANT_API_ENDPOINT + RESTAURANTS_API;
   private static final String MENU_API_URI = RESTAURANT_API_ENDPOINT + MENU_API;
   private static final String CART_API_URI = RESTAURANT_API_ENDPOINT + CART_API;
@@ -131,7 +126,6 @@ public class RestaurantControllerTest {
     assertEquals(HttpStatus.BAD_REQUEST.value(), response.getStatus());
   }
 
-  //-90 TO 90 latitude
   @Test
   public void invalidLongitudeResultsInBadHttpRequest() throws Exception {
     URI uri = UriComponentsBuilder
@@ -157,7 +151,6 @@ public class RestaurantControllerTest {
 
     assertEquals(RESTAURANT_API_URI + "?latitude=10&longitude=-181", uri.toString());
 
-    // calling api with invalid longitude
     response = mvc.perform(
         get(uri.toString()).accept(APPLICATION_JSON_UTF8)
     ).andReturn().getResponse();
@@ -167,7 +160,6 @@ public class RestaurantControllerTest {
 
   @Test
   public void incorrectlySpelledLongitudeParamResultsInBadHttpRequest() throws Exception {
-    // mocks not required, since validation will fail before that.
     URI uri = UriComponentsBuilder
         .fromPath(RESTAURANT_API_URI)
         .queryParam("latitude", "10")
@@ -186,7 +178,6 @@ public class RestaurantControllerTest {
 
   @Test
   public void incorrectlySpelledLatitudeParamResultsInBadHttpRequest() throws Exception {
-    // mocks not required, since validation will fail before that.
     URI uri = UriComponentsBuilder
         .fromPath(RESTAURANT_API_URI)
         .queryParam("laitude", "10")
@@ -205,14 +196,12 @@ public class RestaurantControllerTest {
 
   @Test
   public void noRequestParamResultsInBadHttpReuest() throws Exception {
-    // mocks not required, since validation will fail before that.
     URI uri = UriComponentsBuilder
         .fromPath(RESTAURANT_API_URI)
         .build().toUri();
 
     assertEquals(RESTAURANT_API_URI, uri.toString());
 
-    // calling api without latitude and longitude
     MockHttpServletResponse response = mvc.perform(
         get(uri.toString()).accept(APPLICATION_JSON_UTF8)
     ).andReturn().getResponse();
@@ -222,7 +211,6 @@ public class RestaurantControllerTest {
 
   @Test
   public void missingLongitudeParamResultsInBadHttpRequest() throws Exception {
-    // calling api without latitude
     URI uri = UriComponentsBuilder
         .fromPath(RESTAURANT_API_URI)
         .queryParam("latitude", "20.21")
@@ -239,7 +227,6 @@ public class RestaurantControllerTest {
 
   @Test
   public void missingLatitudeParamResultsInBadHttpRequest() throws Exception {
-    // calling api without longitude
     URI uri = UriComponentsBuilder
         .fromPath(RESTAURANT_API_URI)
         .queryParam("longitude", "30.31")

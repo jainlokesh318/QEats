@@ -129,13 +129,6 @@ public class RestaurantServiceMockitoTestStub {
     assertEquals(2, allRestaurantsCloseByPeakHours.getRestaurants().size());
     assertEquals("12", allRestaurantsCloseByPeakHours.getRestaurants().get(0).getRestaurantId());
     assertEquals("14", allRestaurantsCloseByPeakHours.getRestaurants().get(1).getRestaurantId());
-
-
-    // TODO: CRIO_TASK_MODULE_MOCKITO
-    //  Call restaurantService.findAllRestaurantsCloseBy with appropriate parameters such that
-    //  Both of the mocks created above are called.
-    //  Our assessment will verify whether these mocks are called as per the definition.
-    //  Refer to the assertions below in order to understand the requirements better.
   }
 
 }
